@@ -1,34 +1,13 @@
-$syrBlue: #375772;
-$syrOrange: #D44500;
-$primaryFont: "Helvetica", sans-serif;
+@import 
+    'base/variables',
+    'base/mixins',
+    'base/foundation';
 
-h1,h2,h3,h4,h5,h6,p {
-    margin: 0;
-    padding: 0;
-}
-body {
-    background-color: $syrOrange;
-}
-header {
-    background-color: black;
-    color: white;
-    padding: 10px;
-}
-main {
-    background-color: white;
-    color: $syrBlue;
-    padding: 10px;
-    h1 {
-        font-family: $primaryFont;
-        font-size: 36px;
-    }
-    h2 {
-        font-family: $primaryFont;
-        font-size: 28px;
-    }
-}
-footer {
-    background-color: $syrBlue; /*SU blue*/
-    color: white;
-    padding: 10px;
-}
+@import 
+    'regions/header',
+    'regions/sidebar',
+    'regions/footer';
+
+@import
+    'views/home';
+

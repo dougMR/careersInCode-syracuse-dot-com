@@ -1,0 +1,33 @@
+h1 {
+    @include buildFont(Arial,36px,limegreen);
+}
+
+.showcase {
+    background-color: black;
+    color: white;
+
+    .primary {
+        background-color: purple;
+        min-height: 500px;
+    }
+    .showcase-row {
+        display: flex;
+    }
+    .secondary {
+        width: 50%;
+        min-height: 200px;
+        background-color: brown;
+    }
+    .showcase-right {
+        width: 50%;
+        min-height: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: tan;
+        .tertiary {
+            width: 50%;
+            min-height: 100px;
+            background-color: pink;
+        }
+    }
+}
