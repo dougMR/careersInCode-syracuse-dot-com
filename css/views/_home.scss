@@ -5,29 +5,93 @@ h1 {
 .showcase {
     background-color: black;
     color: white;
-
     .primary {
         background-color: purple;
         min-height: 500px;
     }
     .showcase-row {
-        display: flex;
-    }
-    .secondary {
-        width: 50%;
-        min-height: 200px;
-        background-color: brown;
-    }
-    .showcase-right {
-        width: 50%;
-        min-height: 200px;
-        display: flex;
-        flex-wrap: wrap;
-        background-color: tan;
-        .tertiary {
-            width: 50%;
-            min-height: 100px;
-            background-color: pink;
+        // display: flex;
+        display: block;
+        .secondary {
+            width: 100%;
+            min-height: 200px;
+            background-color: brown;
         }
+        .showcase-right {
+            width: 100%;
+            min-height: 200px;
+            background-color: tan;
+            .tertiary {
+                width: 100%;
+                min-height: 100px;
+                background-color: pink;
+            }
+            @include breakpoint(sm) {
+                width: 50%;
+                display: flex;
+                flex-wrap: wrap;
+                .tertiary {
+                    width: 50%;
+                }
+            }
+        }
+        @include breakpoint(sm){
+            display: flex;
+            .secondary {
+                width: 50%;
+            }
+        }
+    } // showcase-row end
+} // showcase end
+.trending {
+    background-color: white;
+    padding: 1px 0; // prevent collapsing margin
+    // margin: 1rem 0;
+    h2 {
+        font-family: $primaryFont;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin: 1.5rem 0;
     }
-}
+    .trending-row {
+        // background-color: limegreen;
+        .trending-item {
+            width: calc(100% - 2rem);
+            padding-bottom: 0.5rem;
+            margin: 1rem;
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+            button {
+                font-size: 0.75rem;
+                font-family: $primaryFont;
+                font-weight: bold;
+                color: white;
+                line-height: 1rem;
+                border-radius: 1.5rem;
+                padding: 0.25rem 0.75rem;
+                background-color: orange;
+                border: none;
+                box-shadow: 0.1rem -0.1rem 0.1rem -0.1rem black;
+                margin: 0.5rem 0;
+                text-shadow: 0 0 0.1rem black;
+            }
+            h3 {
+                font-family: $primaryFont;
+                font-size: 1rem;
+                font-weight: bold;
+            }
+        } // trending-item
+        @include breakpoint(sm) {
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .trending-item {
+                width: calc( (100% - 2rem)/3 );
+                margin: 0;
+            }
+        }
+    } // trending row
+} // trending

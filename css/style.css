@@ -5,6 +5,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 body {
   background-color: #D44500;
+  font-size: 16px;
 }
 
 .container {
@@ -12,20 +13,12 @@ body {
 }
 
 @media all and (min-width: 700px) {
-  body {
-    background-color: green;
-  }
-
   .container {
     width: 96%;
     margin: 0 auto;
   }
 }
 @media all and (min-width: 1000px) {
-  body {
-    background-color: blue;
-  }
-
   .container {
     width: 1000px;
   }
@@ -34,6 +27,50 @@ header {
   background-color: black;
   color: white;
   padding: 10px;
+}
+header .header-row {
+  display: flex;
+  justify-content: space-between;
+}
+header .header-row .header-icon {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: fuscia;
+}
+header .header-row #search-icon {
+  text-align: right;
+}
+header .search-bar {
+  height: 50px;
+  right: 0;
+  bottom: -60px;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid grey;
+  display: none;
+}
+header .search-bar #search {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+header .search-bar input {
+  width: 75%;
+  height: 50px;
+  border: none;
+  padding: 0;
+}
+header .search-bar input:placeholder-shown {
+  padding-left: 2%;
+}
+header .search-bar button {
+  height: 50px;
+  width: 15%;
+  line-height: 50px;
+  padding: 0 2%;
+  border: none;
+  background-color: orange;
 }
 
 footer {
@@ -58,24 +95,91 @@ h1 {
   min-height: 500px;
 }
 .showcase .showcase-row {
-  display: flex;
+  display: block;
 }
-.showcase .secondary {
-  width: 50%;
+.showcase .showcase-row .secondary {
+  width: 100%;
   min-height: 200px;
   background-color: brown;
 }
-.showcase .showcase-right {
-  width: 50%;
+.showcase .showcase-row .showcase-right {
+  width: 100%;
   min-height: 200px;
-  display: flex;
-  flex-wrap: wrap;
   background-color: tan;
 }
-.showcase .showcase-right .tertiary {
-  width: 50%;
+.showcase .showcase-row .showcase-right .tertiary {
+  width: 100%;
   min-height: 100px;
   background-color: pink;
+}
+@media (min-width: 768px) {
+  .showcase .showcase-row .showcase-right {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .showcase .showcase-row .showcase-right .tertiary {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .showcase .showcase-row {
+    display: flex;
+  }
+  .showcase .showcase-row .secondary {
+    width: 50%;
+  }
+}
+
+.trending {
+  background-color: white;
+  padding: 1px 0;
+}
+.trending h2 {
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+}
+.trending .trending-row .trending-item {
+  width: calc(100% - 2rem);
+  padding-bottom: 0.5rem;
+  margin: 1rem;
+}
+.trending .trending-row .trending-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.trending .trending-row .trending-item button {
+  font-size: 0.75rem;
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+  color: white;
+  line-height: 1rem;
+  border-radius: 1.5rem;
+  padding: 0.25rem 0.75rem;
+  background-color: orange;
+  border: none;
+  box-shadow: 0.1rem -0.1rem 0.1rem -0.1rem black;
+  margin: 0.5rem 0;
+  text-shadow: 0 0 0.1rem black;
+}
+.trending .trending-row .trending-item h3 {
+  font-family: "Helvetica", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .trending .trending-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .trending .trending-row .trending-item {
+    width: calc( (100% - 2rem)/3 );
+    margin: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
